@@ -60,7 +60,7 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
     >
       {/* Header */}
       <div className="p-4 border-b border-gray-200 sticky top-0 bg-white z-20">
-        <div className="h-10 relative w-full max-w-40">
+        <div className="h-20 relative w-full max-w-40">
           <Image 
             src="/contents/T.I.P. Logo HD.png" 
             alt="T.I.P. Logo" 

@@ -48,7 +48,7 @@ export default function Home() {
         {/* Footer */}
         <footer className="mt-auto p-8 border-t border-gray-200 bg-white">
           <div className="max-w-6xl mx-auto">
-            <div className="h-16 relative w-48">
+            <div className="h-26 relative w-48">
               <Image 
                 src="/contents/T.I.P. Logo HD.png" 
                 alt="T.I.P. Logo" 
