@@ -1,14 +1,18 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
+import { usePathname } from "next/navigation"
 import { sdgData } from "@/data/sdg-data"
 import { useState, useRef, useEffect } from "react"
 
 interface SidebarProps {
-  onNavigate: (sectionId: string) => void
+  onNavigate?: (sectionId: string) => void
 }
 
 export default function Sidebar({ onNavigate }: SidebarProps) {
+  const pathname = usePathname()
+  const isHomePage = pathname === "/"
   const [expandedSDGs, setExpandedSDGs] = useState<Set<string>>(new Set())
   const [sidebarWidth, setSidebarWidth] = useState(280)
   const [isResizing, setIsResizing] = useState(false)
@@ -72,13 +76,22 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
 
       {/* Navigation */}
       <nav className="flex-1 p-3 space-y-1.5">
-        {/* About Section */}
-        <button
-          onClick={() => onNavigate("about")}
-          className="w-full text-left px-3 py-2.5 rounded-lg transition-colors duration-200 text-s font-medium text-[#292929] hover:bg-gray-100 leading-tight"
-        >
-          Institutional Commitment to the SDGs
-        </button>
+        {/* About Section - Only on home page */}
+        {isHomePage ? (
+          <button
+            onClick={() => onNavigate && onNavigate("about")}
+            className="w-full text-left px-3 py-2.5 rounded-lg transition-colors duration-200 text-s font-medium text-[#292929] hover:bg-gray-100 leading-tight"
+          >
+            Institutional Commitment to the SDGs
+          </button>
+        ) : (
+          <Link
+            href="/"
+            className="block w-full text-left px-3 py-2.5 rounded-lg transition-colors duration-200 text-s font-medium text-[#292929] hover:bg-gray-100 leading-tight"
+          >
+            ← Back to Home
+          </Link>
+        )}
 
         {sdgData.map((sdg) => {
           const isExpanded = expandedSDGs.has(sdg.id)
@@ -92,12 +105,12 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
           return (
             <div key={sdg.id}>
               <div className="flex items-center gap-0.5">
-                <button
-                  onClick={() => onNavigate(`sdg-${sdg.number}`)}
+                <Link
+                  href={`/sdg/${sdg.number}`}
                   className="flex-1 text-left px-3 py-2.5 rounded-lg transition-all duration-200 text-[13px] font-medium text-[#292929] hover:text-[#f6c445] min-w-0"
                 >
                   <span className="truncate block">{`SDG ${sdg.number}: ${sdg.title}`}</span>
-                </button>
+                </Link>
                 {hasAnyTitles && (
                   <button
                     onClick={() => toggleSDGExpand(sdg.id)}
@@ -128,25 +141,27 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
                     return (
                       <div key={target.id}>
                         {hasTargetTitle && (
-                          <button
-                            onClick={() => onNavigate(target.id)}
-                            className="text-[12px] text-[#292929]/80 py-1.5 font-semibold uppercase tracking-wide hover:text-[#f6c445] hover:bg-gray-100 transition-colors w-full text-left px-2 rounded leading-tight wrap-break-word"
+                          <Link
+                            href={target.link || "#"}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-[12px] text-[#292929]/80 py-1.5 font-semibold uppercase tracking-wide hover:text-[#f6c445] hover:bg-gray-100 transition-colors w-full text-left px-2 rounded leading-tight wrap-break-word block"
                           >
                             {target.title}
-                          </button>
+                          </Link>
                         )}
                         {hasIndicatorTitles && (
                           <div className="ml-1 space-y-0.5">
                             {target.indicators.map((indicator) => {
                               if (!indicator.title || !indicator.link) return null
                               return (
-                                <button
+                                <Link
                                   key={indicator.id}
-                                  onClick={() => onNavigate(indicator.id)}
+                                  href={`/sdg/${sdg.number}/${indicator.id}`}
                                   className="text-[11px] text-[#292929]/70 py-1 px-2 hover:text-[#f6c445] hover:bg-gray-100 transition-colors w-full text-left block rounded leading-tight wrap-break-word"
                                 >
                                   • {indicator.title}
-                                </button>
+                                </Link>
                               )
                             })}
                           </div>

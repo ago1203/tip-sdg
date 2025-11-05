@@ -137,10 +137,17 @@ export const sdgData: SDG[] = [
         link: "",
         indicators: [
           {
+            id: "sdg-6-1-0",
+            title: "",
+            link: "",
+            description: "T.I.P. commits to ensuring access to safe and potable water across all campuses, maintaining proper sanitation facilities, and promoting water conservation through sustainable plumbing, wastewater management, and educational initiatives for students.",
+            // imageCount: 3,
+          },
+          {
             id: "sdg-6-1-1",
             title: "6.1.3 Clean Water and Sanitation: publications",
             link: "https://drive.google.com/file/d/1mrfNS-R0bbLX3mV4rSoV3U4AaEcXy3X5/view?usp=sharing",
-            description: "T.I.P. commits to ensuring access to safe and potable water across all campuses, maintaining proper sanitation facilities, and promoting water conservation through sustainable plumbing, wastewater management, and educational initiatives for students.",
+            description: "",
             // imageCount: 3,
           },
           {

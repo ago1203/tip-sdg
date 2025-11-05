@@ -2,8 +2,8 @@
 
 import { useRef } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import Sidebar from "@/components/side-bar"
-import SDGSection from "@/components/sdg-section"
 import { sdgData } from "@/data/sdg-data"
 import AboutSection from "@/components/about-section"
 
@@ -27,10 +27,45 @@ export default function Home() {
         {/* About Section */}
         <AboutSection />
 
-        {sdgData.map((sdg) => (
-          <SDGSection key={sdg.id} sdgNumber={sdg.number} title={sdg.title} targets={sdg.targets} />
-          
-        ))}
+        {/* SDG Grid */}
+        <section id="sdgs" className="bg-white border-b border-gray-200">
+          <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#292929] mb-12">
+              Sustainable Development Goals
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {sdgData.map((sdg) => (
+                <Link
+                  key={sdg.id}
+                  href={`/sdg/${sdg.number}`}
+                  className="group bg-white border-2 border-gray-200 rounded-lg p-6 hover:border-[#f6c445] hover:shadow-lg transition-all duration-300"
+                >
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="w-16 h-16 rounded-lg overflow-hidden shadow-md shrink-0">
+                      <Image
+                        src={`/sdg-logos/E_WEB_INVERTED_${sdg.number.toString().padStart(2, "0")}.png`}
+                        alt={`SDG ${sdg.number}`}
+                        width={64}
+                        height={64}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <div className="flex-1">
+                      <span className="text-sm font-bold text-[#f6c445]">SDG {sdg.number}</span>
+                      <h3 className="text-lg font-bold text-[#292929] group-hover:text-[#f6c445] transition-colors line-clamp-2">
+                        {sdg.title}
+                      </h3>
+                    </div>
+                  </div>
+                  <div className="flex items-center text-sm text-[#292929]/60 group-hover:text-[#f6c445] transition-colors">
+                    <span>View Details</span>
+                    <span className="ml-1">→</span>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
         
         {/* Institutional Summary Statement */}
         <section className="bg-white border-b border-gray-200">
