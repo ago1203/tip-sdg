@@ -142,9 +142,7 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
                       <div key={target.id}>
                         {hasTargetTitle && (
                           <Link
-                            href={target.link || "#"}
-                            target="_blank"
-                            rel="noopener noreferrer"
+                            href={`/sdg/${sdg.number}/${target.id}`}
                             className="text-[12px] text-[#292929]/80 py-1.5 font-semibold uppercase tracking-wide hover:text-[#f6c445] hover:bg-gray-100 transition-colors w-full text-left px-2 rounded leading-tight wrap-break-word block"
                           >
                             {target.title}

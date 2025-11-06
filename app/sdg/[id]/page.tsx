@@ -64,20 +64,18 @@ export default function SDGPage() {
             <div key={target.id} className="space-y-8">
               {/* Target Title */}
               {target.title && (
-                <div>
-                  <h2 className="text-2xl md:text-3xl font-bold text-[#292929] mb-4">
+                <div className="flex flex-wrap items-center gap-4">
+                  <h2 className="text-2xl md:text-3xl font-bold text-[#292929]">
                     {target.title}
                   </h2>
                   {target.link && (
-                    <a
-                      href={target.link}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 text-[#f6c445] hover:text-[#292929] transition-colors"
+                    <Link
+                      href={`/sdg/${sdg.number}/${target.id}`}
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-[#f6c445] text-white rounded-lg hover:bg-[#e5b33e] transition-colors font-medium"
                     >
                       <span>View PDF</span>
-                      <span>🔗</span>
-                    </a>
+                      <span>📄</span>
+                    </Link>
                   )}
                 </div>
               )}
@@ -130,7 +128,7 @@ export default function SDGPage() {
               />
             </div>
             <p className="mt-4 text-xs text-[#292929]/60">
-              © {new Date().getFullYear()} Technological Institute of the Philippines. All rights reserved.
+              © 2023 Technological Institute of the Philippines. All rights reserved.
             </p>
           </div>
         </footer>

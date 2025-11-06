@@ -92,7 +92,7 @@ export default function Home() {
               />
             </div>
             <p className="mt-4 text-xs text-[#292929]/60">
-              © {new Date().getFullYear()} Technological Institute of the Philippines. All rights reserved.
+              © 2023 Technological Institute of the Philippines. All rights reserved.
             </p>
           </div>
         </footer>

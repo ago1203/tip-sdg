@@ -69,16 +69,103 @@ export const sdgData: SDG[] = [
     title: "Good Health and Well-Being",
     targets: [
       {
-        id: "sdg-3-1",
+        id: "sdg-3-0",
         title: "",
         link: "",
         indicators: [
           {
-            id: "sdg-3-1-1",
+            id: "sdg-3-0-1",
             title: "",
             link: "",
             description: "T.I.P. ensures a safe, healthy, and inclusive environment for students and employees by maintaining high standards of laboratory and workplace safety, providing mental health support, and promoting health through campus activities.",
             // imageCount: 3,
+          },
+        ],
+      },
+      {
+        id: "sdg-3-1",
+        title: "3.1 Research on health and well-being",
+        link: "",
+        indicators: [
+          {
+            id: "sdg-3-1-1",
+            title: "3.1.1 Good Health and Well-being: paper views",
+            link: "https://drive.google.com/file/d/1dg06j7RygQYO56ySffSKfvmGLNwwgPsc/view?usp=drive_link",
+            description: "",
+          },
+          {
+            id: "sdg-3-1-2",
+            title: "3.1.2 Clinical citations",
+            link: "https://drive.google.com/file/d/1NDKog7UIIygsAYLoFB_6aQV_8-XVZOsi/view?usp=drive_link",
+            description: "",
+          },
+          {
+            id: "sdg-3-1-3",
+            title: "3.1.3 Good Health and Well-being: publications",
+            link: "https://drive.google.com/file/d/1Qq-VPvjcDj_FJY1Wu27Jlczv7fszTKBo/view?usp=drive_link",
+            description: "",
+          },
+        ],
+      },
+      {
+        id: "sdg-3-2",
+        title: "3.2 Number graduating in health professions",
+        link: "",
+        indicators: [
+          {
+            id: "sdg-3-2-1",
+            title: "3.2.1 Indicator: Proportion of graduates in health professions Year: 2024",
+            link: "https://drive.google.com/file/d/1NYuuNSItSjTKtKvrv3okiQqdOxXJix_8/view?usp=drive_link",
+            description: "",
+          },
+        ],
+      },
+      {
+        id: "sdg-3-3",
+        title: "3.3 Collaborations and health services",
+        link: "",
+        indicators: [
+          {
+            id: "sdg-3-1-5",
+            title: "3.3.1 Current collaborations with health institutions",
+            link: "https://drive.google.com/file/d/1pTY1YpKHapBVzcPP4bOq1MFKEX9S8sXV/view?usp=drive_link",
+            description: "",
+          },
+          {
+            id: "sdg-3-1-6",
+            title: "3.3.2 Health outreach programmes",
+            link: "https://drive.google.com/file/d/1OZ6YQgpVQfTB6oAGEZucK7OE_td8i5so/view?usp=drive_link",
+            description: "",
+          },
+          {
+            id: "sdg-3-1-7",
+            title: "3.3.3 Shared sports facilities",
+            link: "https://drive.google.com/file/d/14XnbKTqYxXHsRq74878ABJvyXKhQLa2k/view?usp=drive_link",
+            description: "",
+          },
+          {
+            id: "sdg-3-1-8",
+            title: "3.3.4 Sexual and reproductive health care services for students",
+            link: "https://drive.google.com/file/d/17hC6kXgDF-xeJNxF_geXurF8dfRcHuSw/view?usp=drive_link",
+            description: "",
+          },
+          {
+            id: "sdg-3-1-9",
+            title: "3.3.5 Mental health support for students",
+            link: "https://drive.google.com/file/d/1bfP8-YjoQOLlFkUF7VIkeFJX1ntBG91i/view?usp=drive_link",
+            description: "",
+          },
+          {
+            id: "sdg-3-1-10",
+            title: "3.3.6 Smoke-free policy",
+            link: "https://drive.google.com/file/d/1o0hReQj5wFlyoLfzzWO_fc3Emqw4BhcX/view?usp=drive_link",
+            description: "",
+          },
+          {
+            id: "sdg-3-1-11",
+            title: "3.3.7 Mental Health Support for Staff",
+            link: "https://drive.google.com/file/d/1No-MjqC9p3hVpTP5nro7oLdWNl4Q-Aeb/view?usp=drive_link",
+            description: "",
           },
         ],
       },
@@ -132,7 +219,7 @@ export const sdgData: SDG[] = [
     title: "Clean Water and Sanitation",
     targets: [
       {
-        id: "sdg-1-1",
+        id: "sdg-6-1",
         title: "",
         link: "",
         indicators: [
@@ -144,21 +231,28 @@ export const sdgData: SDG[] = [
             // imageCount: 3,
           },
           {
-            id: "sdg-6-1-1",
+            id: "sdg-6-1-3",
             title: "6.1.3 Clean Water and Sanitation: publications",
             link: "https://drive.google.com/file/d/1mrfNS-R0bbLX3mV4rSoV3U4AaEcXy3X5/view?usp=sharing",
             description: "",
             // imageCount: 3,
           },
+        ],
+      },
+      {
+        id: "sdg-6-2",
+        title: "",
+        link: "",
+        indicators: [
           {
-            id: "sdg-6-1-2",
+            id: "sdg-6-2-1",
             title: "6.2.1 Water consumption tracking",
             link: "https://drive.google.com/file/d/17rY_iDpz2O2XxMkCLbpemctMAs4zGZAP/view?usp=sharing",
             description: "",
             // imageCount: 2,
           },
           {
-            id: "sdg-6-1-3",
+            id: "sdg-6-2-2",
             title: "6.2.2 Water consumption per person",
             link: "https://drive.google.com/file/d/17rY_iDpz2O2XxMkCLbpemctMAs4zGZAP/view?usp=sharing",
             description: "",
@@ -169,31 +263,31 @@ export const sdgData: SDG[] = [
       {
         id: "sdg-6-3",
         title: "6.3 Water usage and care",
-        link: "https://drive.google.com/file/d/1bSFSbHlPTSogUjZODw9MNBaI6q_yWcrn/view?usp=sharing",
+        link: "",
         indicators: [
           {
-            id: "sdg-6-1-4",
+            id: "sdg-6-3-1",
             title: "6.3.1 Wastewater treatment",
             link: "https://drive.google.com/file/d/1bSFSbHlPTSogUjZODw9MNBaI6q_yWcrn/view?usp=sharing",
             description: "",
             // imageCount: 2,
           },
           {
-            id: "sdg-6-1-5",
+            id: "sdg-6-3-3",
             title: "6.3.3 Free drinking water provided",
             link: "https://drive.google.com/file/d/1oRwOU6xcY3VdLaq1Zs4B3OR3Er9Su7Vq/view?usp=sharing",
             description: "",
             // imageCount: 2,
           },
           {
-            id: "sdg-6-1-6",
+            id: "sdg-6-3-4",
             title: "6.3.4 Water-conscious building standards",
             link: "https://drive.google.com/file/d/1WRQn73f89NKoBbBe0WdK4wmLwRxawasf/view?usp=sharing",
             description: "",
             // imageCount: 2,
           },
           {
-            id: "sdg-6-1-7",
+            id: "sdg-6-3-5",
             title: "6.3.5 Water-conscious planting",
             link: "https://drive.google.com/file/d/1TUdt-wZBBogwnLsFsPAZ8EJUf4azb4yS/view?usp=sharing",
             description: "",
@@ -204,24 +298,24 @@ export const sdgData: SDG[] = [
       {
         id: "sdg-6-5",
         title: "6.5 Water in the community",
-        link: "https://drive.google.com/file/d/1xAz4trysMfc1Z31MFHFFGHu5xnwPAGcu/view?usp=sharing",
+        link: "",
         indicators: [
           {
-            id: "sdg-6-1-8",
+            id: "sdg-6-5-1",
             title: "6.5.1 Water management educational opportunities",
             link: "https://drive.google.com/file/d/1xAz4trysMfc1Z31MFHFFGHu5xnwPAGcu/view?usp=sharing",
             description: "",
             // imageCount: 2,
           },
           {
-            id: "sdg-6-1-9",
+            id: "sdg-6-5-3",
             title: "6.5.3 Off campus water conservation support",
             link: "https://drive.google.com/file/d/1fj_vGwLbowz4QOKv00w3ux67VEevl6lq/view?usp=sharing",
             description: "",
             // imageCount: 2,
           },
           {
-            id: "sdg-6-1-10",
+            id: "sdg-6-5-5",
             title: "6.5.5 Cooperation on water security ",
             link: "https://drive.google.com/file/d/1Ta1u4zAAeppGCEWC7ZBTJO0NlP7-cP8b/view?usp=sharing",
             description: "",
@@ -237,16 +331,87 @@ export const sdgData: SDG[] = [
     title: "Affordable and Clean Energy",
     targets: [
       {
-        id: "sdg-7-1",
+        id: "sdg-7-0",
         title: "",
         link: "",
         indicators: [
           {
-            id: "sdg-7-1-1",
+            id: "sdg-7-0-1",
             title: "",
             link: "",
-            description: "T.I.P. pledges to improve energy efficiency in its laboratories, buildings, and offices, promote renewable energy technologies in its curriculum and research, and adopt sustainable practices that reduce the institutional carbon footprint.",
+            description: "T.I.P. pledges to advance the transition toward 100% renewable energy use beyond campus operations while continuously improving energy efficiency across its laboratories, buildings, and offices. Guided by the Philippines’ Renewable Energy Act of 2008 and UN Sustainable Development Goal 7 (Affordable and Clean Energy), T.I.P. commits to integrating clean energy and sustainable practices in its operations, curriculum, research, and community partnerships. Through sustained advocacy, education, and innovation, T.I.P. reaffirms its role as a catalyst for the nation’s clean energy transformation and a model for sustainability in higher education.",
             // imageCount: 3,
+          },
+        ],
+      },
+      {
+        id: "sdg-7-1",
+        title: "7.1 Research on clean energy",
+        link: "https://drive.google.com/file/d/1RASrnmfF55Ddec4ZEkXbZjvHZ2mMu3L7/view?usp=drive_link",
+        indicators: [
+        ],
+      },
+      {
+        id: "sdg-7-2",
+        title: "7.2 University measures towards affordable and clean energy",
+        link: "https://drive.google.com/file/d/15tHzzFxVSieKmS9KjWUfiQSvcHYkMAvy/view?usp=drive_link",
+        indicators: [
+        ],
+      },
+      {
+        id: "sdg-7-3",
+        title: "7.3 Energy use density",
+        link: "https://drive.google.com/file/d/1peL4AJztYoKSipCAdxN0pQcucMqEXXvQ/view?usp=drive_link",
+        indicators: [
+        ],
+      },
+      {
+        id: "sdg-7-4",
+        title: "7.4 Energy and the community",
+        link: "",
+        indicators: [
+          {
+            id: "sdg-7-4-1",
+            title: "7.4.1 Local community outreach for energy efficiency",
+            link: "https://drive.google.com/file/d/1uR8syVBzLs_j8zFQrIXUUQCU0ExoubPE/view?usp=drive_link",
+            description: ""
+          },
+          {
+            id: "sdg-7-4-2",
+            title: "7.4.2 100% renewable energy pledge",
+            link: "https://drive.google.com/file/d/1RkgMVUHmaGZollfaKO7RirWLcRqI7UeP/view?usp=drive_link",
+            description: ""
+          },
+          {
+            id: "sdg-7-4-3",
+            title: "7.4.3 Energy efficiency services for industry",
+            link: "https://drive.google.com/file/d/1biAdYLD82hrHmtYpwXl4xYAI4URroYjc/view?usp=drive_link",
+            description: ""
+          },
+          {
+            id: "sdg-7-4-4",
+            title: "7.4.4 Policy development for clean energy technology",
+            link: "https://drive.google.com/file/d/19dO1tSQ8tpVwA-Caq2EaFB5qZ7KGxzef/view?usp=drive_link",
+            description: ""
+          },
+          {
+            id: "sdg-7-4-5",
+            title: "7.4.5 Assistance to low-carbon innovation",
+            link: "https://drive.google.com/file/d/1FOnMqfCIcVUB-k_jfoepPv_sRBVuDskW/view?usp=drive_link",
+            description: ""
+          },
+        ],
+      },
+      {
+        id: "sdg-7-5",
+        title: "7.5 Low-carbon energy use",
+        link: "",
+        indicators: [
+          {
+            id: "sdg-7-4-1",
+            title: "7.5 Low-carbon energy use",
+            link: "https://drive.google.com/file/d/1S-qEe2GtAb4j-dGBPhkvxXoIGX4LTFZP/view?usp=drive_link",
+            description: ""
           },
         ],
       },
@@ -447,40 +612,54 @@ export const sdgData: SDG[] = [
     title: "Partnerships for the Goals",
     targets: [
       {
-        id: "sdg-17-1",
-        title: "17.2 Relationships to support the goals",
-        link: "https://drive.google.com/file/d/17iwYEuJncG1jNKRKRIqrW-_Si-UlJs4T/view?usp=sharing",
+        id: "sdg-17-0",
+        title: "",
+        link: "",
         indicators: [
           {
-            id: "sdg-17-1-1",
-            title: "17.2.1 Relationships with regional NGOs and government for SDG policy",
-            link: "https://drive.google.com/file/d/17iwYEuJncG1jNKRKRIqrW-_Si-UlJs4T/view?usp=sharing",
+            id: "sdg-17-0-1",
+            title: "",
+            link: "",
             description: "T.I.P. pledges to strengthen collaborations with industry, academe, government, and international partners to advance research, education, and outreach initiatives that accelerate the achievement of the SDGs.",
             // imageCount: 3,
           },
+        ],
+      },
+      {
+        id: "sdg-17-2",
+        title: "17.2 Relationships to support the goals",
+        link: "",
+        indicators: [
           {
-            id: "sdg-6-1-8",
+            id: "sdg-17-2-1",
+            title: "17.2.1 Relationships with regional NGOs and government for SDG policy",
+            link: "https://drive.google.com/file/d/17iwYEuJncG1jNKRKRIqrW-_Si-UlJs4T/view?usp=sharing",
+            description: "",
+            // imageCount: 3,
+          },
+          {
+            id: "sdg-17-2-2",
             title: "17.2.2 Cross sectoral dialogue about SDGs",
             link: "https://drive.google.com/file/d/1tQ9ekzrPX9E6JlHLRZYMP-NFGOUsRB0g/view?usp=sharing",
             description: "",
             // imageCount: 2,
           },
           {
-            id: "sdg-6-1-9",
+            id: "sdg-17-2-3",
             title: "17.2.3 International collaboration data gathering for SDG",
             link: "https://drive.google.com/file/d/1Rx5-dmm4KLEKU-4s8qFHZ96OwyzaYSoH/view?usp=sharing",
             description: "",
             // imageCount: 2,
           },
           {
-            id: "sdg-6-1-10",
+            id: "sdg-17-2-4",
             title: "17.2.4 Collaboration for SDG best practice",
             link: "https://drive.google.com/file/d/1BcCr3AU7BzMtCMnoRdBEWmksMyF7a20A/view?usp=sharing",
             description: "",
             // imageCount: 2,
           },
           {
-            id: "sdg-6-1-11",
+            id: "sdg-17-2-5",
             title: "17.2.5 Collaboration with NGOs for SDGs",
             link: "https://drive.google.com/file/d/1hpw2c4QqX70VhL3mBB1xf_Dx7dlLhpnG/view?usp=sharing",
             description: "",

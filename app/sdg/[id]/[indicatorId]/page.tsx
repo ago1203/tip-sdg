@@ -8,8 +8,8 @@ import { sdgData } from "@/data/sdg-data"
 import PDFViewer from "@/components/pdf-viewer"
 
 /**
- * Individual indicator page with PDF viewer
- * Displays a specific indicator and its associated PDF document
+ * Individual indicator/target page with PDF viewer
+ * Displays a specific indicator or target and its associated PDF document
  */
 export default function IndicatorPage() {
   const params = useParams()
@@ -31,24 +31,37 @@ export default function IndicatorPage() {
     )
   }
   
-  // Find the indicator in the SDG data
-  let indicator = null
+  // Find the target or indicator in the SDG data
+  let item = null
   let targetTitle = ""
+  let isTarget = false
   
+  // First check if it's a target
   for (const target of sdg.targets) {
-    const foundIndicator = target.indicators.find((ind) => ind.id === indicatorId)
-    if (foundIndicator) {
-      indicator = foundIndicator
-      targetTitle = target.title || ""
+    if (target.id === indicatorId && target.link) {
+      item = target
+      isTarget = true
       break
     }
   }
   
-  if (!indicator || !indicator.link) {
+  // If not a target, check indicators
+  if (!item) {
+    for (const target of sdg.targets) {
+      const foundIndicator = target.indicators.find((ind) => ind.id === indicatorId)
+      if (foundIndicator) {
+        item = foundIndicator
+        targetTitle = target.title || ""
+        break
+      }
+    }
+  }
+  
+  if (!item || !item.link) {
     return (
       <div className="min-h-screen bg-white flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-4xl font-bold text-[#292929] mb-4">Indicator Not Found</h1>
+          <h1 className="text-4xl font-bold text-[#292929] mb-4">Content Not Found</h1>
           <Link href={`/sdg/${sdgId}`} className="text-[#f6c445] hover:underline">
             Return to SDG {sdgId}
           </Link>
@@ -75,7 +88,7 @@ export default function IndicatorPage() {
             SDG {sdgId}
           </Link>
           <span className="text-gray-400">/</span>
-          <span className="text-[#292929]/60">{indicator.title || indicatorId}</span>
+          <span className="text-[#292929]/60">{item.title || indicatorId}</span>
         </div>
 
         {/* Page Header */}
@@ -94,19 +107,19 @@ export default function IndicatorPage() {
               <p className="text-sm text-[#292929]/60 font-medium">
                 SDG {sdg.number}: {sdg.title}
               </p>
-              {targetTitle && (
+              {!isTarget && targetTitle && (
                 <p className="text-xs text-[#292929]/50">{targetTitle}</p>
               )}
             </div>
           </div>
           
           <h1 className="text-3xl md:text-4xl font-bold text-[#292929] mb-4">
-            {indicator.title || `Indicator ${indicatorId}`}
+            {item.title || `${isTarget ? 'Target' : 'Indicator'} ${indicatorId}`}
           </h1>
           
-          {indicator.description && (
+          {'description' in item && item.description && (
             <p className="text-lg text-[#292929]/80 leading-relaxed max-w-4xl">
-              {indicator.description}
+              {item.description}
             </p>
           )}
           
@@ -114,7 +127,7 @@ export default function IndicatorPage() {
         </div>
 
         {/* PDF Viewer */}
-        <PDFViewer pdfUrl={indicator.link} title={indicator.title || ""} />
+        <PDFViewer pdfUrl={item.link} title={item.title || ""} />
 
         {/* Footer */}
         <footer className="mt-16 p-8 border-t border-gray-200 bg-white">
@@ -128,7 +141,7 @@ export default function IndicatorPage() {
               />
             </div>
             <p className="mt-4 text-xs text-[#292929]/60">
-              © {new Date().getFullYear()} Technological Institute of the Philippines. All rights reserved.
+              © 2023 Technological Institute of the Philippines. All rights reserved.
             </p>
           </div>
         </footer>

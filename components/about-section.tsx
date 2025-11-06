@@ -5,9 +5,9 @@ export default function AboutSection() {
     <section id="about" className="min-h-screen bg-white border-b border-gray-200">
       <div className="max-w-6xl mx-auto px-6 py-16 md:py-24">
         {/* Header */}
-        <div className="mb-12">
+        <div className="mb-12 text-center">
           <h1 className="text-5xl md:text-7xl font-bold text-[#292929] mb-4 text-balance">Technological Institute of the Philippines</h1>
-          <div className="h-2 font-bold w-32 bg-[#f6c445] rounded-full mb-8"></div>
+          <div className="h-2 font-bold bg-[#f6c445] rounded-full mb-8 mx-auto"></div>
           <p className="text-3xl text-[#292929] leading-relaxed text-pretty">
             Institutional Commitment to the United Nations Sustainable Development Goals (SDGs)
           </p>
