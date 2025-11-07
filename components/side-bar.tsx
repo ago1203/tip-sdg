@@ -196,7 +196,7 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
                                     <Link
                                       key={indicator.id}
                                       href={`/sdg/${sdg.number}/${indicator.id}`}
-                                      className="text-[11px] text-[#292929]/70 py-1 px-2 hover:text-[#f6c445] hover:bg-gray-100 transition-colors w-full text-left block rounded leading-tight wrap-break-word"
+                                      className="text-[13px] text-[#292929]/70 py-1 px-2 hover:text-[#f6c445] hover:bg-gray-100 transition-colors w-full text-left block rounded leading-tight wrap-break-word"
                                     >
                                       • {indicator.title}
                                     </Link>

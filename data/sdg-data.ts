@@ -247,7 +247,7 @@ export const sdgData: SDG[] = [
           {
             id: "sdg-6-2-1",
             title: "6.2.1 Water consumption tracking",
-            link: "https://drive.google.com/file/d/17rY_iDpz2O2XxMkCLbpemctMAs4zGZAP/view?usp=sharing",
+            link: "https://drive.google.com/file/d/19nEF9yNGV-NDz67akDrbuZUJTaDjrIsK/view?usp=sharing",
             description: "",
             // imageCount: 2,
           },
@@ -325,6 +325,20 @@ export const sdgData: SDG[] = [
             id: "sdg-6-5-5",
             title: "6.5.5 Cooperation on water security ",
             link: "https://drive.google.com/file/d/1Ta1u4zAAeppGCEWC7ZBTJO0NlP7-cP8b/view?usp=sharing",
+            description: "",
+            // imageCount: 2,
+          },
+	  {
+            id: "sdg-6-5-6",
+            title: "6.5.6 Promoting conscious water usage on campus",
+            link: "https://drive.google.com/file/d/1b5v59CJvKCVQ5w43cfJbfKYOvFT0J5Ro/view?usp=sharing",
+            description: "",
+            // imageCount: 2,
+          },
+	  {
+            id: "sdg-6-5-7",
+            title: "6.5.7 Promoting conscious water usage in the wider community",
+            link: "https://drive.google.com/file/d/1ouU0iQRdnsyGogqu1rxsiJ7ZSbqxJgdi/view?usp=sharing",
             description: "",
             // imageCount: 2,
           },
@@ -795,13 +809,13 @@ export const sdgData: SDG[] = [
       },
       {
         id: "sdg-17-3",
-        title: "17.3 Publication of SDG reports - per SDG",
+        title: "",
         link: "",
         indicators: [
           {
             id: "sdg-17-3-1",
-            title: "",
-            link: "",
+            title: "17.3.1 to 17.3.17 Publication of SDG reports - per SDG",
+            link: "https://tip-sdg-411d547782ea.herokuapp.com/",
             description: "",
             // imageCount: 3,
           },
