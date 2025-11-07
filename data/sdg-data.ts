@@ -247,14 +247,14 @@ export const sdgData: SDG[] = [
           {
             id: "sdg-6-2-1",
             title: "6.2.1 Water consumption tracking",
-            link: "https://drive.google.com/file/d/19nEF9yNGV-NDz67akDrbuZUJTaDjrIsK/view?usp=sharing",
+            link: "https://drive.google.com/file/d/17rY_iDpz2O2XxMkCLbpemctMAs4zGZAP/view?usp=sharing",
             description: "",
             // imageCount: 2,
           },
           {
             id: "sdg-6-2-2",
             title: "6.2.2 Water consumption per person",
-            link: "https://drive.google.com/file/d/17rY_iDpz2O2XxMkCLbpemctMAs4zGZAP/view?usp=sharing",
+            link: "https://drive.google.com/file/d/19nEF9yNGV-NDz67akDrbuZUJTaDjrIsK/view?usp=sharing",
             description: "",
             // imageCount: 2,
           },
