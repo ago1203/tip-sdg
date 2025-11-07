@@ -2,6 +2,7 @@
 
 import type { SDG } from "@/data/sdg-data"
 import ImageGallery from "./image-gallery"
+import { useSidebar } from "@/contexts/sidebar-context"
 
 interface MainContentProps {
   sdg: SDG | undefined
@@ -9,9 +10,11 @@ interface MainContentProps {
 }
 
 export default function MainContent({ sdg, selectedSDG }: MainContentProps) {
+  const { isOpen } = useSidebar()
+
   if (selectedSDG === 0) {
     return (
-      <div className="flex-1 overflow-y-auto bg-gradient-to-b from-background via-background to-background/95">
+      <div className={`flex-1 overflow-y-auto bg-gradient-to-b from-background via-background to-background/95 transition-all duration-300 ${isOpen ? '' : 'ml-0'}`}>
         <div className="max-w-5xl mx-auto px-8 py-16 md:py-20">
           {/* About Header */}
           <div className="mb-16">
@@ -47,7 +50,7 @@ export default function MainContent({ sdg, selectedSDG }: MainContentProps) {
   if (!sdg) return null
 
   return (
-    <div className="flex-1 overflow-y-auto bg-gradient-to-b from-background via-background to-background/95">
+    <div className={`flex-1 overflow-y-auto bg-gradient-to-b from-background via-background to-background/95 transition-all duration-300 ${isOpen ? '' : 'ml-0'}`}>
       <div className="max-w-5xl mx-auto px-8 py-16 md:py-20">
         <div className="mb-16 space-y-4">
           <div className="flex items-baseline gap-4">
