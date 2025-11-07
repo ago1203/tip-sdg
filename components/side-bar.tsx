@@ -17,6 +17,7 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
   const [expandedSDGs, setExpandedSDGs] = useState<Set<string>>(new Set())
   const [sidebarWidth, setSidebarWidth] = useState(280)
   const [isResizing, setIsResizing] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const sidebarRef = useRef<HTMLDivElement>(null)
   const { isOpen, toggleSidebar } = useSidebar()
 
@@ -33,6 +34,28 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
   const startResizing = () => {
     setIsResizing(true)
   }
+
+  // Load expanded SDGs from localStorage on mount
+  useEffect(() => {
+    const savedExpanded = localStorage.getItem("sidebar-expanded-sdgs")
+    if (savedExpanded) {
+      try {
+        const expandedArray = JSON.parse(savedExpanded)
+        setExpandedSDGs(new Set(expandedArray))
+      } catch (e) {
+        // If parsing fails, just use empty set
+        console.error("Failed to parse expanded SDGs from localStorage", e)
+      }
+    }
+    setMounted(true)
+  }, [])
+
+  // Save expanded SDGs to localStorage whenever they change
+  useEffect(() => {
+    if (mounted) {
+      localStorage.setItem("sidebar-expanded-sdgs", JSON.stringify(Array.from(expandedSDGs)))
+    }
+  }, [expandedSDGs, mounted])
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
