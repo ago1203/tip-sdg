@@ -20,6 +20,8 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
   const [mounted, setMounted] = useState(false)
   const sidebarRef = useRef<HTMLDivElement>(null)
   const { isOpen, toggleSidebar } = useSidebar()
+  const scrollRef = useRef<HTMLDivElement>(null)
+
 
   const toggleSDGExpand = (sdgId: string) => {
     const newExpanded = new Set(expandedSDGs)
@@ -35,6 +37,7 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
     setIsResizing(true)
   }
 
+  
   // Load expanded SDGs from localStorage on mount
   useEffect(() => {
     const savedExpanded = localStorage.getItem("sidebar-expanded-sdgs")
@@ -56,6 +59,7 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
       localStorage.setItem("sidebar-expanded-sdgs", JSON.stringify(Array.from(expandedSDGs)))
     }
   }, [expandedSDGs, mounted])
+
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -119,7 +123,7 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
           minWidth: isOpen ? `${sidebarWidth}px` : "0px",
         }}
       >
-        <div className="overflow-y-auto flex flex-col h-full scroll-smooth">
+        <div ref={scrollRef} className="overflow-y-auto flex flex-col h-full scroll-smooth ">
           {/* Header */}
           <div className="p-4 border-b border-gray-200 sticky top-0 bg-white z-20">
             <div className="h-20 relative w-full max-w-40">
