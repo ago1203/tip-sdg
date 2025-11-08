@@ -18,9 +18,12 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
   const [sidebarWidth, setSidebarWidth] = useState(280)
   const [isResizing, setIsResizing] = useState(false)
   const [mounted, setMounted] = useState(false)
+  const [scrollRestored, setScrollRestored] = useState(false)
   const sidebarRef = useRef<HTMLDivElement>(null)
   const { isOpen, toggleSidebar } = useSidebar()
   const scrollRef = useRef<HTMLDivElement>(null)
+  const isRestoringScroll = useRef(false)
+  const initialScrollPosition = useRef<number | null>(null)
 
 
   const toggleSDGExpand = (sdgId: string) => {
@@ -38,6 +41,14 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
   }
 
   
+  // Load initial scroll position BEFORE mounting
+  useEffect(() => {
+    const savedScrollPosition = localStorage.getItem("sidebar-scroll-position")
+    if (savedScrollPosition) {
+      initialScrollPosition.current = parseInt(savedScrollPosition, 10)
+    }
+  }, [])
+
   // Load expanded SDGs from localStorage on mount
   useEffect(() => {
     const savedExpanded = localStorage.getItem("sidebar-expanded-sdgs")
@@ -59,6 +70,33 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
       localStorage.setItem("sidebar-expanded-sdgs", JSON.stringify(Array.from(expandedSDGs)))
     }
   }, [expandedSDGs, mounted])
+
+  // Restore scroll position IMMEDIATELY when scrollRef is available
+  useEffect(() => {
+    if (scrollRef.current && initialScrollPosition.current !== null && !scrollRestored) {
+      // Use requestAnimationFrame to ensure DOM is ready
+      requestAnimationFrame(() => {
+        if (scrollRef.current) {
+          scrollRef.current.scrollTop = initialScrollPosition.current!
+          setScrollRestored(true)
+        }
+      })
+    }
+  })
+
+  // Save scroll position to localStorage whenever it changes
+  useEffect(() => {
+    const scrollElement = scrollRef.current
+    if (!scrollElement || !mounted) return
+
+    const handleScroll = () => {
+      localStorage.setItem("sidebar-scroll-position", String(scrollElement.scrollTop))
+    }
+
+    scrollElement.addEventListener("scroll", handleScroll, { passive: true })
+    return () => scrollElement.removeEventListener("scroll", handleScroll)
+  }, [mounted])
+
 
 
   useEffect(() => {
@@ -123,7 +161,13 @@ export default function Sidebar({ onNavigate }: SidebarProps) {
           minWidth: isOpen ? `${sidebarWidth}px` : "0px",
         }}
       >
-        <div ref={scrollRef} className="overflow-y-auto flex flex-col h-full scroll-smooth ">
+        <div 
+          ref={scrollRef} 
+          className="overflow-y-auto flex flex-col h-full"
+          style={{ 
+            scrollBehavior: scrollRestored ? 'smooth' : 'auto'
+          }}
+        >
           {/* Header */}
           <div className="p-4 border-b border-gray-200 sticky top-0 bg-white z-20">
             <div className="h-20 relative w-full max-w-40">
