@@ -534,20 +534,20 @@ export const sdgData: SDG[] = [
           },
         ],
       },
-      {
-        id: "sdg-8-3",
-        title: "8.3 Expenditure per employee",
-        link: "",
-        indicators: [
-          {
-            id: "sdg-8-3-1",
-            title: "8.3.1 Indicator: Expenditure per employee",
-            link: "https://drive.google.com/file/d/1aEGIKeF34CQEqJ9IkoqjDTsm82XrG5zJ/view?usp=drive_link",
-            description: "",
-            // imageCount: 3,
-          },
-        ],
-      },
+      // {
+      //   id: "sdg-8-3",
+      //   title: "8.3 Expenditure per employee",
+      //   link: "",
+      //   indicators: [
+      //     {
+      //       id: "sdg-8-3-1",
+      //       title: "8.3.1 Indicator: Expenditure per employee",
+      //       link: "https://drive.google.com/file/d/1aEGIKeF34CQEqJ9IkoqjDTsm82XrG5zJ/view?usp=drive_link",
+      //       description: "",
+      //       // imageCount: 3,
+      //     },
+      //   ],
+      // },
       {
         id: "sdg-8-4",
         title: "8.4 Proportion of students taking work placements",
