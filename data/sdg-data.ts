@@ -479,14 +479,14 @@ export const sdgData: SDG[] = [
           {
             id: "sdg-8-2-2",
             title: "8.2.2 Employment practice unions",
-            link: "https://drive.google.com/file/d/1Fvuiy7W8KQ2HK_lQ0h8xaAhjO80bVIRT/view?usp=drive_link",
+            link: "https://drive.google.com/file/d/1uJqHTT7CE-sN3kiBxXcfyr26TjCIzmE9/view?usp=drive_link",
             description: "",
             // imageCount: 3,
           },
           {
             id: "sdg-8-2-3",
             title: "8.2.3 Employment policy on discrimination",
-            link: "https://drive.google.com/file/d/1vAFGaIqGj3rBlvrp6yJKwpBwgZ_IQ6wA/view?usp=drive_link",
+            link: "https://drive.google.com/file/d/1WbnXqMcUQquaTSeRt39Ng6qIM83X0z3X/view?usp=drive_link",
             description: "",
             // imageCount: 3,
           },
